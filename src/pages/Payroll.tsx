@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,15 +16,12 @@ const Payroll = () => {
   const [week, setWeek] = useState(getCurrentWeek());
   const [selectedDepartment, setSelectedDepartment] = useState<string>('all');
   
-  // Update week when offset changes
   useEffect(() => {
     setWeek(getWeek(currentWeekOffset));
   }, [currentWeekOffset]);
   
-  // Get all departments for the filter
   const departments = ['all', ...new Set(employees.map(emp => emp.department))];
   
-  // Filter employees by department
   const filteredEmployees = selectedDepartment === 'all'
     ? employees
     : employees.filter(emp => emp.department === selectedDepartment);
