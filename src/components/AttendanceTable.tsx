@@ -34,7 +34,7 @@ const AttendanceTable = ({ timeRecords }: AttendanceTableProps) => {
     if (record.late > 0) {
       return <Badge variant="destructive" className="font-normal">Late ({record.late} min)</Badge>;
     } else if (record.undertime > 0) {
-      return <Badge variant="warning" className="bg-yellow-500 text-white font-normal">Undertime</Badge>;
+      return <Badge variant="secondary" className="bg-yellow-500 text-white font-normal">Undertime</Badge>;
     } else if (record.overtime > 0) {
       return <Badge variant="default" className="bg-green-600 font-normal">Overtime</Badge>;
     } else {
