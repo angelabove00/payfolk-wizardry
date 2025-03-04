@@ -66,6 +66,13 @@ const EmployeeDetail = () => {
     ...netSalaryData
   };
   
+  // Get current week dates for PayrollSummary
+  const today = new Date();
+  const weekStart = new Date(today);
+  weekStart.setDate(today.getDate() - today.getDay()); // Start of week (Sunday)
+  const weekEnd = new Date(today);
+  weekEnd.setDate(weekStart.getDate() + 6); // End of week (Saturday)
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -241,7 +248,12 @@ const EmployeeDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <PayrollSummary salaryData={salaryData} />
+                <PayrollSummary
+                  employee={employee}
+                  timeRecords={timeRecords}
+                  weekStart={weekStart}
+                  weekEnd={weekEnd}
+                />
               </motion.div>
             </TabsContent>
           </Tabs>
