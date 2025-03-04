@@ -5,7 +5,7 @@ import { employees } from '@/data/mockData';
 import EmployeeCard from '@/components/EmployeeCard';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Plus } from 'lucide-react';
+import { Search, Plus, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 

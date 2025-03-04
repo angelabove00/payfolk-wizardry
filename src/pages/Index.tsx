@@ -13,6 +13,7 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { employees, timeRecords } from '@/data/mockData';
+// Re-import framer-motion to ensure proper module resolution
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 
